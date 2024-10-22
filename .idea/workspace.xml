@@ -9,12 +9,13 @@
     <option name="autoReloadType" value="NONE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="71e53f95-7058-4eed-b17f-79a68c976207" name="Changes" comment="add OnboardingScreen">
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/ru/igorcodes/newsapp/data/manager/LocalUserManagerImpl.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/ru/igorcodes/newsapp/domain/manager/LocalUserManager.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/ru/igorcodes/newsapp/util/Constants.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/file-system.probe" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/file-system.probe" afterDir="false" />
+    <list default="true" id="71e53f95-7058-4eed-b17f-79a68c976207" name="Changes" comment="implement Preferences Datastore, store AppEntry boolean in Preferences Datastore">
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/ru/igorcodes/newsapp/NewsApplication.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/ru/igorcodes/newsapp/di/AppModule.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/ru/igorcodes/newsapp/domain/usecases/AppEntryUseCases.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/ru/igorcodes/newsapp/MainActivity.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/ru/igorcodes/newsapp/MainActivity.kt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -38,6 +39,7 @@
         <option value="Kotlin Interface" />
         <option value="Kotlin Class" />
         <option value="Kotlin Object" />
+        <option value="Kotlin Data Class" />
       </list>
     </option>
   </component>
@@ -195,7 +197,15 @@
       <option name="project" value="LOCAL" />
       <updated>1729619684283</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="implement Preferences Datastore, store AppEntry boolean in Preferences Datastore">
+      <option name="closed" value="true" />
+      <created>1729622698791</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1729622698791</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -204,6 +214,7 @@
     <MESSAGE value="Setup project, add dependencies, fonts, colors and images" />
     <MESSAGE value="add Splash Screen" />
     <MESSAGE value="add OnboardingScreen" />
-    <option name="LAST_COMMIT_MESSAGE" value="add OnboardingScreen" />
+    <MESSAGE value="implement Preferences Datastore, store AppEntry boolean in Preferences Datastore" />
+    <option name="LAST_COMMIT_MESSAGE" value="implement Preferences Datastore, store AppEntry boolean in Preferences Datastore" />
   </component>
 </project>
