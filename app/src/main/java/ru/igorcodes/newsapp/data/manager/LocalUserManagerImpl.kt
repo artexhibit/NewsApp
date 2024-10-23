@@ -12,9 +12,8 @@ import ru.igorcodes.newsapp.domain.manager.LocalUserManager
 import ru.igorcodes.newsapp.util.Constants
 import ru.igorcodes.newsapp.util.Constants.USER_SETTINGS
 
-class LocalUserManagerImpl(
-    private val context: Context
-) : LocalUserManager {
+class LocalUserManagerImpl(private val context: Context) : LocalUserManager {
+
     override suspend fun saveAppEntry() {
         context.dataStore.edit { settings ->
             settings[PreferencesKeys.APP_ENTRY] = true
@@ -23,7 +22,7 @@ class LocalUserManagerImpl(
 
     override fun readAppEntry(): Flow<Boolean> {
         return context.dataStore.data.map { preferences ->
-            preferences[PreferencesKeys.APP_ENTRY] == true
+            preferences[PreferencesKeys.APP_ENTRY] ?: false
         }
     }
 }

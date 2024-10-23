@@ -3,6 +3,7 @@ import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
+import androidx.activity.viewModels
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Box
 import androidx.compose.material3.MaterialTheme
@@ -13,15 +14,13 @@ import androidx.lifecycle.lifecycleScope
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
-import ru.igorcodes.newsapp.domain.usecases.AppEntryUseCases
-import ru.igorcodes.newsapp.presentation.onboarding.OnboardingScreen
+import ru.igorcodes.newsapp.presentation.navgraph.NavGraph
 import ru.igorcodes.newsapp.ui.theme.NewsAppTheme
-import javax.inject.Inject
 
 @AndroidEntryPoint
 class MainActivity: ComponentActivity() {
-    @Inject
-    lateinit var appEntryUseCases: AppEntryUseCases
+
+    val viewModel by viewModels<MainViewModel>()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -29,23 +28,23 @@ class MainActivity: ComponentActivity() {
         WindowCompat.setDecorFitsSystemWindows(window, false)
 
         showSplashScreenAfter()
-        lifecycleScope.launch {
-            appEntryUseCases.readAppEntry().collect {
-
-            }
-        }
 
         setContent {
             NewsAppTheme {
                 Box(modifier = Modifier.background(color = MaterialTheme.colorScheme.background)) {
-                    OnboardingScreen()
+                    val startDestination = viewModel.startDestination
+                    NavGraph(startDestination = startDestination)
                 }
             }
         }
     }
 
     private fun showSplashScreenAfter(seconds: Long = 2000) {
-        val splashScreen = installSplashScreen()
+        val splashScreen = installSplashScreen().apply {
+            setKeepOnScreenCondition {
+                viewModel.splashCondition
+            }
+        }
         var isSplashScreenVisible = true
 
         splashScreen.setKeepOnScreenCondition { isSplashScreenVisible }
