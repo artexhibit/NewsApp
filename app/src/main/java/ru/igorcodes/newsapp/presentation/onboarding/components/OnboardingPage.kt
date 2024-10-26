@@ -18,8 +18,8 @@ import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
 import ru.igorcodes.newsapp.R
-import ru.igorcodes.newsapp.presentation.Dimensions.MediumPadding1
-import ru.igorcodes.newsapp.presentation.Dimensions.MediumPadding2
+import ru.igorcodes.newsapp.util.Dimensions.MediumPadding1
+import ru.igorcodes.newsapp.util.Dimensions.MediumPadding2
 import ru.igorcodes.newsapp.presentation.onboarding.Page
 import ru.igorcodes.newsapp.presentation.onboarding.pages
 import ru.igorcodes.newsapp.ui.theme.NewsAppTheme

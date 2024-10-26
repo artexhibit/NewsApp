@@ -13,11 +13,9 @@ import ru.igorcodes.newsapp.presentation.onboarding.OnboardingViewModel
 @Composable
 fun NavGraph(startDestination: String) {
     val navController = rememberNavController()
+
     NavHost(navController = navController, startDestination = startDestination) {
-        navigation(
-            route = Route.AppStartNavigation.route,
-            startDestination = Route.OnboardingScreen.route
-        ) {
+        navigation(route = Route.AppStartNavigation.route, startDestination = Route.OnboardingScreen.route) {
             composable(route = Route.OnboardingScreen.route) {
                 val viewModel: OnboardingViewModel = hiltViewModel()
                 OnboardingScreen(event = { viewModel.onEvent(it) })

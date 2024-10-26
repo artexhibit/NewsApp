@@ -1,4 +1,4 @@
-package ru.igorcodes.newsapp.presentation
+package ru.igorcodes.newsapp.util
 
 import androidx.compose.ui.unit.dp
 

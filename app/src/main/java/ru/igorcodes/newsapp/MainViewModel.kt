@@ -3,7 +3,7 @@ package ru.igorcodes.newsapp
 import androidx.compose.runtime.mutableStateOf
 import androidx.lifecycle.ViewModel
 import kotlinx.coroutines.flow.onEach
-import ru.igorcodes.newsapp.domain.usecases.AppEntryUseCases
+import ru.igorcodes.newsapp.domain.usecases.app_entry.AppEntryUseCases
 import ru.igorcodes.newsapp.presentation.navgraph.Route
 import javax.inject.Inject
 import androidx.compose.runtime.getValue

@@ -18,8 +18,8 @@ import androidx.compose.runtime.rememberCoroutineScope
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import kotlinx.coroutines.launch
-import ru.igorcodes.newsapp.presentation.Dimensions.MediumPadding2
-import ru.igorcodes.newsapp.presentation.Dimensions.PageIndicatorWidth
+import ru.igorcodes.newsapp.util.Dimensions.MediumPadding2
+import ru.igorcodes.newsapp.util.Dimensions.PageIndicatorWidth
 import ru.igorcodes.newsapp.presentation.common.NewsButton
 import ru.igorcodes.newsapp.presentation.common.NewsTextButton
 import ru.igorcodes.newsapp.presentation.onboarding.components.OnboardingPage
