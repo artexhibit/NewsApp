@@ -4,7 +4,6 @@ import androidx.paging.PagingSource
 import androidx.paging.PagingState
 import ru.igorcodes.newsapp.domain.model.Article
 
-
 class NewsPagingSource (
     private val newsApi: NewsApi,
     private val sources: String
