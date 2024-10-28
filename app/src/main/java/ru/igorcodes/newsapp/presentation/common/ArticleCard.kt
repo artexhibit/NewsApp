@@ -31,7 +31,6 @@ import ru.igorcodes.newsapp.domain.model.Article
 import ru.igorcodes.newsapp.domain.model.Source
 import ru.igorcodes.newsapp.ui.theme.NewsAppTheme
 import ru.igorcodes.newsapp.util.Dimensions.ArticleCardSize
-import ru.igorcodes.newsapp.util.Dimensions.ExtraSmallPadding
 import ru.igorcodes.newsapp.util.Dimensions.ExtraSmallPadding2
 import ru.igorcodes.newsapp.util.Dimensions.SmallIconSize
 
@@ -52,7 +51,7 @@ fun ArticleCard(modifier: Modifier = Modifier, article: Article, onClick: () -> 
         Column(
             verticalArrangement = Arrangement.SpaceAround,
             modifier = Modifier
-                .padding(horizontal = ExtraSmallPadding)
+                .padding(horizontal = ExtraSmallPadding2)
                 .height(ArticleCardSize)
         ) {
             Text(
