@@ -17,6 +17,7 @@ import ru.igorcodes.newsapp.domain.usecases.app_entry.ReadAppEntry
 import ru.igorcodes.newsapp.domain.usecases.app_entry.SaveAppEntry
 import ru.igorcodes.newsapp.domain.usecases.news.GetNews
 import ru.igorcodes.newsapp.domain.usecases.news.NewsUseCases
+import ru.igorcodes.newsapp.domain.usecases.news.SearchNews
 import ru.igorcodes.newsapp.util.Constants.BASE_URL
 import javax.inject.Singleton
 
@@ -26,14 +27,17 @@ object AppModule {
 
     @Provides
     @Singleton
-    fun provideLocalUserManager(application: Application) : LocalUserManager {
+    fun provideLocalUserManager(application: Application): LocalUserManager {
         return LocalUserManagerImpl(application)
     }
 
     @Provides
     @Singleton
-    fun provideAppEntryUseCases(localUserManager: LocalUserManager) : AppEntryUseCases {
-        return AppEntryUseCases(readAppEntry = ReadAppEntry(localUserManager), saveAppEntry = SaveAppEntry(localUserManager))
+    fun provideAppEntryUseCases(localUserManager: LocalUserManager): AppEntryUseCases {
+        return AppEntryUseCases(
+            readAppEntry = ReadAppEntry(localUserManager),
+            saveAppEntry = SaveAppEntry(localUserManager)
+        )
     }
 
     @Provides
@@ -55,6 +59,9 @@ object AppModule {
     @Provides
     @Singleton
     fun provideNewsUseCases(newsRepository: NewsRepository): NewsUseCases {
-        return NewsUseCases(getNews = GetNews(newsRepository))
+        return NewsUseCases(
+            getNews = GetNews(newsRepository),
+            searchNews = SearchNews(newsRepository)
+        )
     }
 }

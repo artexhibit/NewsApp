@@ -11,6 +11,8 @@ import ru.igorcodes.newsapp.presentation.home.HomeScreen
 import ru.igorcodes.newsapp.presentation.home.HomeViewModel
 import ru.igorcodes.newsapp.presentation.onboarding.OnboardingScreen
 import ru.igorcodes.newsapp.presentation.onboarding.OnboardingViewModel
+import ru.igorcodes.newsapp.presentation.search.SearchScreen
+import ru.igorcodes.newsapp.presentation.search.SearchViewModel
 
 @Composable
 fun NavGraph(startDestination: String) {
@@ -32,9 +34,8 @@ fun NavGraph(startDestination: String) {
             startDestination = Route.NewsNavigatorScreen.route
         ) {
             composable(route = Route.NewsNavigatorScreen.route) {
-                val viewModel: HomeViewModel = hiltViewModel()
-                val articles = viewModel.news.collectAsLazyPagingItems()
-                HomeScreen(articles = articles, navigate = {})
+                val viewModel: SearchViewModel = hiltViewModel()
+                SearchScreen(state = viewModel.state.value, event = viewModel::onEvent, navigate = {})
             }
         }
     }
