@@ -1,12 +1,16 @@
 package ru.igorcodes.newsapp.di
 
 import android.app.Application
+import androidx.room.Room
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
 import dagger.hilt.components.SingletonComponent
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
+import ru.igorcodes.newsapp.data.local.NewsDao
+import ru.igorcodes.newsapp.data.local.NewsDatabase
+import ru.igorcodes.newsapp.data.local.NewsTypeConverter
 import ru.igorcodes.newsapp.data.manager.LocalUserManagerImpl
 import ru.igorcodes.newsapp.data.remote.NewsApi
 import ru.igorcodes.newsapp.data.repository.NewsRepositoryImpl
@@ -19,6 +23,7 @@ import ru.igorcodes.newsapp.domain.usecases.news.GetNews
 import ru.igorcodes.newsapp.domain.usecases.news.NewsUseCases
 import ru.igorcodes.newsapp.domain.usecases.news.SearchNews
 import ru.igorcodes.newsapp.util.Constants.BASE_URL
+import ru.igorcodes.newsapp.util.Constants.NEWS_DATABASE_NAME
 import javax.inject.Singleton
 
 @Module
@@ -64,4 +69,25 @@ object AppModule {
             searchNews = SearchNews(newsRepository)
         )
     }
+
+    @Provides
+    @Singleton
+    fun provideNewsDatabase(
+        application: Application
+    ): NewsDatabase {
+        return Room.databaseBuilder(
+            context = application,
+            klass = NewsDatabase::class.java,
+            name = NEWS_DATABASE_NAME
+        )
+            .addTypeConverter(NewsTypeConverter())
+            .fallbackToDestructiveMigration()
+            .build()
+    }
+
+    @Provides
+    @Singleton
+    fun provideNewsDao(
+        newsDatabase: NewsDatabase
+    ): NewsDao = newsDatabase.newsDao
 }
