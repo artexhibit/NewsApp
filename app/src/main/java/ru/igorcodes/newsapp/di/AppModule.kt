@@ -19,9 +19,12 @@ import ru.igorcodes.newsapp.domain.repository.NewsRepository
 import ru.igorcodes.newsapp.domain.usecases.app_entry.AppEntryUseCases
 import ru.igorcodes.newsapp.domain.usecases.app_entry.ReadAppEntry
 import ru.igorcodes.newsapp.domain.usecases.app_entry.SaveAppEntry
+import ru.igorcodes.newsapp.domain.usecases.news.DeleteArticle
 import ru.igorcodes.newsapp.domain.usecases.news.GetNews
 import ru.igorcodes.newsapp.domain.usecases.news.NewsUseCases
 import ru.igorcodes.newsapp.domain.usecases.news.SearchNews
+import ru.igorcodes.newsapp.domain.usecases.news.SelectArticles
+import ru.igorcodes.newsapp.domain.usecases.news.UpsertArticle
 import ru.igorcodes.newsapp.util.Constants.BASE_URL
 import ru.igorcodes.newsapp.util.Constants.NEWS_DATABASE_NAME
 import javax.inject.Singleton
@@ -63,24 +66,28 @@ object AppModule {
 
     @Provides
     @Singleton
-    fun provideNewsUseCases(newsRepository: NewsRepository): NewsUseCases {
+    fun provideNewsUseCases(newsRepository: NewsRepository, newsDao: NewsDao): NewsUseCases {
         return NewsUseCases(
             getNews = GetNews(newsRepository),
-            searchNews = SearchNews(newsRepository)
+            searchNews = SearchNews(newsRepository),
+            upsertArticle = UpsertArticle(newsDao),
+            deleteArticle = DeleteArticle(newsDao),
+            selectArticles = SelectArticles(newsDao),
         )
     }
 
     @Provides
     @Singleton
     fun provideNewsDatabase(
-        application: Application
+        application: Application,
+        newsTypeConverter: NewsTypeConverter
     ): NewsDatabase {
         return Room.databaseBuilder(
             context = application,
             klass = NewsDatabase::class.java,
             name = NEWS_DATABASE_NAME
         )
-            .addTypeConverter(NewsTypeConverter())
+            .addTypeConverter(newsTypeConverter)
             .fallbackToDestructiveMigration()
             .build()
     }
@@ -90,4 +97,10 @@ object AppModule {
     fun provideNewsDao(
         newsDatabase: NewsDatabase
     ): NewsDao = newsDatabase.newsDao
+
+    @Provides
+    @Singleton
+    fun provideNewsTypeConverter(): NewsTypeConverter {
+        return NewsTypeConverter()
+    }
 }
