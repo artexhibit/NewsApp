@@ -23,6 +23,7 @@ import ru.igorcodes.newsapp.domain.usecases.news.DeleteArticle
 import ru.igorcodes.newsapp.domain.usecases.news.GetNews
 import ru.igorcodes.newsapp.domain.usecases.news.NewsUseCases
 import ru.igorcodes.newsapp.domain.usecases.news.SearchNews
+import ru.igorcodes.newsapp.domain.usecases.news.SelectArticle
 import ru.igorcodes.newsapp.domain.usecases.news.SelectArticles
 import ru.igorcodes.newsapp.domain.usecases.news.UpsertArticle
 import ru.igorcodes.newsapp.util.Constants.BASE_URL
@@ -73,6 +74,7 @@ object AppModule {
             upsertArticle = UpsertArticle(newsDao),
             deleteArticle = DeleteArticle(newsDao),
             selectArticles = SelectArticles(newsDao),
+            selectArticle = SelectArticle(newsDao)
         )
     }
 
