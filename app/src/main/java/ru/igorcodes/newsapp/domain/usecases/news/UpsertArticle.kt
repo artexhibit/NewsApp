@@ -1,12 +1,12 @@
 package ru.igorcodes.newsapp.domain.usecases.news
 
-import ru.igorcodes.newsapp.data.local.NewsDao
 import ru.igorcodes.newsapp.domain.model.Article
+import ru.igorcodes.newsapp.domain.repository.NewsRepository
 
 class UpsertArticle(
-    private val newsDao: NewsDao
+    private val newsRepository: NewsRepository
 ) {
     suspend operator fun invoke(article: Article) {
-        newsDao.upsert(article)
+        newsRepository.upsertArticle(article)
     }
 }

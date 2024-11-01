@@ -9,23 +9,7 @@
     <option name="autoReloadType" value="NONE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="71e53f95-7058-4eed-b17f-79a68c976207" name="Changes" comment="add Bookmark screen">
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/ru/igorcodes/newsapp/domain/usecases/news/SelectArticle.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/ru/igorcodes/newsapp/presentation/details/DetailsViewModel.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/ru/igorcodes/newsapp/presentation/news_navigator/NewsNavigator.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/ru/igorcodes/newsapp/presentation/news_navigator/components/NewsBottomNavigation.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/8.9/checksums/checksums.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.9/checksums/checksums.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/8.9/checksums/md5-checksums.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.9/checksums/md5-checksums.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/8.9/checksums/sha1-checksums.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.9/checksums/sha1-checksums.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/8.9/dependencies-accessors/1b9ea09088bcd3d953fa9d25243abefc16cf1366/metadata.bin" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/8.9/dependencies-accessors/1b9ea09088bcd3d953fa9d25243abefc16cf1366/sources/org/gradle/accessors/dm/LibrariesForLibs.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/8.9/dependencies-accessors/1b9ea09088bcd3d953fa9d25243abefc16cf1366/sources/org/gradle/accessors/dm/LibrariesForLibsInPluginsBlock.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/8.9/dependencies-accessors/2ac2a2f200dff08287fa2d5dfdaff1b97c369f00/metadata.bin" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/8.9/dependencies-accessors/2ac2a2f200dff08287fa2d5dfdaff1b97c369f00/sources/org/gradle/accessors/dm/LibrariesForLibs.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/8.9/dependencies-accessors/2ac2a2f200dff08287fa2d5dfdaff1b97c369f00/sources/org/gradle/accessors/dm/LibrariesForLibsInPluginsBlock.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/8.9/dependencies-accessors/f4275729e20215ed17bf6dc53f4aad0d041247b2/metadata.bin" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/8.9/dependencies-accessors/f4275729e20215ed17bf6dc53f4aad0d041247b2/sources/org/gradle/accessors/dm/LibrariesForLibs.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/8.9/dependencies-accessors/f4275729e20215ed17bf6dc53f4aad0d041247b2/sources/org/gradle/accessors/dm/LibrariesForLibsInPluginsBlock.java" beforeDir="false" />
+    <list default="true" id="71e53f95-7058-4eed-b17f-79a68c976207" name="Changes" comment="add NewsBottomNavigation and NewsNavigator">
       <change beforePath="$PROJECT_DIR$/.gradle/8.9/executionHistory/executionHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.9/executionHistory/executionHistory.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/8.9/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.9/executionHistory/executionHistory.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/8.9/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.9/fileHashes/fileHashes.bin" afterDir="false" />
@@ -33,22 +17,16 @@
       <change beforePath="$PROJECT_DIR$/.gradle/8.9/fileHashes/resourceHashesCache.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.9/fileHashes/resourceHashesCache.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/file-system.probe" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/file-system.probe" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/deploymentTargetSelector.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/deploymentTargetSelector.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/kotlinc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/kotlinc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/build.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/app/build.gradle.kts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/ru/igorcodes/newsapp/data/local/NewsDao.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/ru/igorcodes/newsapp/data/local/NewsDao.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/ru/igorcodes/newsapp/data/repository/NewsRepositoryImpl.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/ru/igorcodes/newsapp/data/repository/NewsRepositoryImpl.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/ru/igorcodes/newsapp/di/AppModule.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/ru/igorcodes/newsapp/di/AppModule.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/ru/igorcodes/newsapp/domain/model/Article.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/ru/igorcodes/newsapp/domain/model/Article.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/ru/igorcodes/newsapp/domain/model/Source.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/ru/igorcodes/newsapp/domain/model/Source.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/ru/igorcodes/newsapp/domain/usecases/news/NewsUseCases.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/ru/igorcodes/newsapp/domain/usecases/news/NewsUseCases.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/ru/igorcodes/newsapp/presentation/bookmark/BookmarkScreen.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/ru/igorcodes/newsapp/presentation/bookmark/BookmarkScreen.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/ru/igorcodes/newsapp/presentation/details/DetailsEvent.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/ru/igorcodes/newsapp/presentation/details/DetailsEvent.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/ru/igorcodes/newsapp/presentation/details/DetailsScreen.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/ru/igorcodes/newsapp/presentation/details/DetailsScreen.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/ru/igorcodes/newsapp/presentation/home/HomeScreen.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/ru/igorcodes/newsapp/presentation/home/HomeScreen.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/ru/igorcodes/newsapp/presentation/navgraph/NavGraph.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/ru/igorcodes/newsapp/presentation/navgraph/NavGraph.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/ru/igorcodes/newsapp/presentation/search/SearchScreen.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/ru/igorcodes/newsapp/presentation/search/SearchScreen.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gradle/libs.versions.toml" beforeDir="false" afterPath="$PROJECT_DIR$/gradle/libs.versions.toml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/ru/igorcodes/newsapp/domain/repository/NewsRepository.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/ru/igorcodes/newsapp/domain/repository/NewsRepository.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/ru/igorcodes/newsapp/domain/usecases/news/DeleteArticle.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/ru/igorcodes/newsapp/domain/usecases/news/DeleteArticle.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/ru/igorcodes/newsapp/domain/usecases/news/SelectArticle.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/ru/igorcodes/newsapp/domain/usecases/news/SelectArticle.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/ru/igorcodes/newsapp/domain/usecases/news/SelectArticles.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/ru/igorcodes/newsapp/domain/usecases/news/SelectArticles.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/ru/igorcodes/newsapp/domain/usecases/news/UpsertArticle.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/ru/igorcodes/newsapp/domain/usecases/news/UpsertArticle.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/ru/igorcodes/newsapp/presentation/bookmark/BookmarkViewModel.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/ru/igorcodes/newsapp/presentation/bookmark/BookmarkViewModel.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/ru/igorcodes/newsapp/presentation/news_navigator/NewsNavigator.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/ru/igorcodes/newsapp/presentation/news_navigator/NewsNavigator.kt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -317,7 +295,15 @@
       <option name="project" value="LOCAL" />
       <updated>1730319124988</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="add NewsBottomNavigation and NewsNavigator">
+      <option name="closed" value="true" />
+      <created>1730407330329</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1730407330329</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -347,6 +333,7 @@
     <MESSAGE value="add details screen for article" />
     <MESSAGE value="add Room database" />
     <MESSAGE value="add Bookmark screen" />
-    <option name="LAST_COMMIT_MESSAGE" value="add Bookmark screen" />
+    <MESSAGE value="add NewsBottomNavigation and NewsNavigator" />
+    <option name="LAST_COMMIT_MESSAGE" value="add NewsBottomNavigation and NewsNavigator" />
   </component>
 </project>

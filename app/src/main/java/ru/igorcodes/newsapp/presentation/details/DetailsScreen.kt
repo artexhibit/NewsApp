@@ -66,7 +66,7 @@ fun DetailsScreen(
                 }
             },
             onBookmarkClick = { event(DetailsEvent.UpsertDeleteArticle(article)) },
-            onBackClick = { navigateUp }
+            onBackClick = { navigateUp() }
         )
 
         LazyColumn(

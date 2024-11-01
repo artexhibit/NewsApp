@@ -1,12 +1,12 @@
 package ru.igorcodes.newsapp.domain.usecases.news
 
-import ru.igorcodes.newsapp.data.local.NewsDao
 import ru.igorcodes.newsapp.domain.model.Article
+import ru.igorcodes.newsapp.domain.repository.NewsRepository
 
 class DeleteArticle(
-    private val newsDao: NewsDao
+    private val newsRepository: NewsRepository
 ) {
     suspend operator fun invoke(article: Article) {
-        newsDao.delete(article)
+        newsRepository.deleteArticle(article)
     }
 }
