@@ -1,5 +1,7 @@
 package ru.igorcodes.newsapp.ui.theme
 
+import androidx.compose.foundation.isSystemInDarkTheme
+import androidx.compose.runtime.Composable
 import androidx.compose.ui.graphics.Color
 
 val Black = Color(0xFF1C1E21) //Dark Background
@@ -12,3 +14,9 @@ val LightBlack = Color(0xFF3A3B3C) //Dark Surface
 
 val BlueGray = Color(0xFFA0A3BD)
 val WhiteGray = Color(0xFFB0B3B8)
+
+val cardColor: Color
+    @Composable
+    get() {
+        return if (isSystemInDarkTheme()) Color.White else Color.Black
+    }

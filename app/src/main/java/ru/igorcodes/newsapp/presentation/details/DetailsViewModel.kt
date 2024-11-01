@@ -6,6 +6,8 @@ import androidx.compose.runtime.setValue
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import dagger.hilt.android.lifecycle.HiltViewModel
+import kotlinx.coroutines.flow.MutableStateFlow
+import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.launch
 import ru.igorcodes.newsapp.domain.model.Article
 import ru.igorcodes.newsapp.domain.usecases.news.NewsUseCases
@@ -17,6 +19,9 @@ class DetailsViewModel @Inject constructor(
 ) : ViewModel() {
     var sideEffect by mutableStateOf<String?>(null)
         private set
+
+    private val _isBookmarked = MutableStateFlow<Boolean>(false)
+    val isBookmarked: StateFlow<Boolean> = _isBookmarked
 
     fun onEvent(event: DetailsEvent) {
         when (event) {
@@ -40,10 +45,12 @@ class DetailsViewModel @Inject constructor(
     private suspend fun upsertArticle(article: Article) {
         newsUseCases.upsertArticle(article)
         sideEffect = "Article saved"
+        _isBookmarked.value = true
     }
 
     private suspend fun deleteArticle(article: Article) {
         newsUseCases.deleteArticle(article)
         sideEffect = "Article deleted"
+        _isBookmarked.value = false
     }
 }

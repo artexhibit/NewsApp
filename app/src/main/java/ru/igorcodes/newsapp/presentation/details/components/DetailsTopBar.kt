@@ -28,7 +28,10 @@ fun DetailsTopBar(
     onShareClick: () -> Unit,
     onBookmarkClick: () -> Unit,
     onBackClick: () -> Unit,
+    isBookmarked: Boolean
 ) {
+    val bookmarkIconColor = if (isBookmarked) Color.Black else Color.Gray
+
     TopAppBar(
         title = {},
         modifier = Modifier.fillMaxWidth(),
@@ -49,7 +52,8 @@ fun DetailsTopBar(
             IconButton(onClick = onBookmarkClick) {
                 Icon(
                     painter = painterResource(R.drawable.ic_bookmark),
-                    contentDescription = null
+                    contentDescription = null,
+                    tint = bookmarkIconColor
                 )
             }
             IconButton(onClick = onShareClick) {
@@ -78,10 +82,10 @@ fun DetailsTopBarPreview() {
             DetailsTopBar(
                 onBrowsingClick = {},
                 onShareClick = {},
-                onBookmarkClick = {}
-            ) {
-
-            }
+                onBookmarkClick = {},
+                isBookmarked = true,
+                onBackClick = {}
+            )
         }
     }
 }

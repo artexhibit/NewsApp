@@ -18,6 +18,7 @@ import com.google.accompanist.systemuicontroller.rememberSystemUiController
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
+import ru.igorcodes.newsapp.presentation.common.EmptyScreen
 import ru.igorcodes.newsapp.presentation.navgraph.NavGraph
 import ru.igorcodes.newsapp.ui.theme.NewsAppTheme
 

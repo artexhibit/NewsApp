@@ -16,12 +16,15 @@ import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.collectAsState
+import androidx.compose.runtime.getValue
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.colorResource
 import androidx.compose.ui.tooling.preview.Preview
+import androidx.hilt.navigation.compose.hiltViewModel
 import coil.compose.AsyncImage
 import coil.request.ImageRequest
 import ru.igorcodes.newsapp.R
@@ -36,9 +39,11 @@ import ru.igorcodes.newsapp.util.Dimensions.MediumPadding1
 fun DetailsScreen(
     article: Article,
     event: (DetailsEvent) -> Unit,
-    navigateUp: () -> Unit
+    navigateUp: () -> Unit,
+    viewModel: DetailsViewModel = hiltViewModel()
 ) {
     val context = LocalContext.current
+    val isBookmarked by viewModel.isBookmarked.collectAsState()
 
     Column(
         modifier = Modifier
@@ -65,8 +70,11 @@ fun DetailsScreen(
                     }
                 }
             },
-            onBookmarkClick = { event(DetailsEvent.UpsertDeleteArticle(article)) },
-            onBackClick = { navigateUp() }
+            onBookmarkClick = {
+                event(DetailsEvent.UpsertDeleteArticle(article))
+            },
+            onBackClick = { navigateUp() },
+            isBookmarked = isBookmarked
         )
 
         LazyColumn(

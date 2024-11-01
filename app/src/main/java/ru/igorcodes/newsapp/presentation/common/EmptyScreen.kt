@@ -38,7 +38,7 @@ fun EmptyScreen(error: LoadState.Error? = null) {
     var startAnimation = remember { mutableStateOf(false) }
     val alphaAnimation = animateFloatAsState(
         targetValue = if (startAnimation.value) 0.3f else 0f,
-        animationSpec = tween(1000)
+        animationSpec = tween(1500), label = ""
     )
 
     if (error == null) {

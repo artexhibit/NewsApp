@@ -21,6 +21,9 @@ fun ArticlesList(
     articles: List<Article>,
     onClick: (Article) -> Unit
 ) {
+    if (articles.isEmpty()) {
+        EmptyScreen()
+    }
     LazyColumn(
         modifier = modifier.fillMaxSize(),
         verticalArrangement = Arrangement.spacedBy(MediumPadding1),
@@ -71,12 +74,17 @@ fun handlePagingResult(articles: LazyPagingItems<Article>): Boolean {
     }
 
     return when {
-        loadState.refresh is AsyncImagePainter.State.Loading -> {
+        loadState.refresh is LoadState.Loading -> {
             ShimmerEffect()
             false
         }
 
         error != null -> {
+            EmptyScreen(error = error)
+            false
+        }
+
+        articles.itemCount == 0 -> {
             EmptyScreen()
             false
         }
