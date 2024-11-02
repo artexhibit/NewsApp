@@ -39,6 +39,13 @@ class DetailsViewModel @Inject constructor(
             is DetailsEvent.RemoveSideEffect -> {
                 sideEffect = null
             }
+
+            is DetailsEvent.CheckIfArticleBookmarked -> {
+                viewModelScope.launch() {
+                    val article = newsUseCases.selectArticle(event.article.url)
+                    _isBookmarked.value = article != null
+                }
+            }
         }
     }
 
